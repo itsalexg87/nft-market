@@ -1,11 +1,10 @@
 import React, { useState, useEffect, createContext } from "react";
 import Web3Modal from "web3modal";
-import { ethers, EtherScanProvider } from "ethers";
+import { ethers } from "ethers";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
 import { MarketAddress, MarketAddressABI } from "./constants";
-import { info } from "autoprefixer";
 
 const projectId = process.env.NEXT_PUBLIC_IPFS_PROJECT_ID;
 const projectSecret = process.env.NEXT_PUBLIC_API_KEY_SECRET;
@@ -13,7 +12,7 @@ const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString("bas
 const options = { host: "ipfs.infura.io", protocol: "https", port: 5001, headers: { authorization: auth } };
 const client = ipfsHttpClient(options);
 const dedicatedEndPoint = "https://itsalexg87.infura-ipfs.io";
-const ALCHEMY_API_KEY = "aR1r-mQBkEJHI3C3JfpTP7Odt9PS7xE1";
+const ALCHEMY_API_KEY = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
 
 // const client = ipfsHttpClient({
 //   host: "ipfs.infura.io",
@@ -100,9 +99,7 @@ export const NFTProvider = ({ children }) => {
   const fetchNFTS = async () => {
     setIsLoadingNFT(false);
     // const provider = new EtherScanProvider("goerli");
-    const provider = new ethers.providers.JsonRpcProvider(
-      "https://eth-goerli.g.alchemy.com/v2/aR1r-mQBkEJHI3C3JfpTP7Odt9PS7xE1"
-    );
+    const provider = new ethers.providers.JsonRpcProvider(`https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_API_KEY}`);
     const contract = fetchContract(provider);
     const data = await contract.fetchMarketItems();
     const items = await Promise.all(
