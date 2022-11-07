@@ -37,12 +37,12 @@ const Info = () => {
             &apos;Connect&apos; Button in Navbar
           </p>
           <p className="font-poppins dark:text-white text-nft-black-1 font-normal text-xl">
-            <span className="text-nft-highlight-color font-semibold">3.</span> Switch to Polygon Mumbai Network
+            <span className="text-nft-highlight-color font-semibold">3.</span> Switch to Goerli Test Network
           </p>
           <p className="font-poppins dark:text-white text-nft-black-1 font-normal text-xl">
-            <span className="text-nft-highlight-color font-semibold">4.</span> Get some MATIC from{" "}
-            <a href="https://faucet.polygon.technology/" rel="noreferrer noopener">
-              <span className="text-nft-highlight-color hover:text-nft-gray-2">Polygon Faucet</span>
+            <span className="text-nft-highlight-color font-semibold">4.</span> Get some GoerliETH from{" "}
+            <a href="https://goerlifaucet.com/" rel="noreferrer noopener">
+              <span className="text-nft-highlight-color hover:text-nft-gray-2">Alchemy</span>
             </a>
           </p>
           <p className="font-poppins dark:text-white text-nft-black-1 font-normal text-xl">
@@ -50,7 +50,6 @@ const Info = () => {
           </p>
           <p className="font-poppins dark:text-white text-nft-black-1 font-normal text-xl">
             <span className="text-nft-highlight-color font-semibold">6.</span> Post your NFTs on Marketplace for sale
-            (0.025 MATIC psting fee)
           </p>
           <p className="mb-6 font-poppins dark:text-white text-nft-black-1 font-normal text-xl">
             <span className="text-nft-highlight-color font-semibold">7.</span> Buy other NFTs on Marketplace
