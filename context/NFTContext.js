@@ -13,6 +13,7 @@ const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString("bas
 const options = { host: "ipfs.infura.io", protocol: "https", port: 5001, headers: { authorization: auth } };
 const client = ipfsHttpClient(options);
 const dedicatedEndPoint = "https://itsalexg87.infura-ipfs.io";
+const ALCHEMY_API_KEY = "aR1r-mQBkEJHI3C3JfpTP7Odt9PS7xE1";
 
 // const client = ipfsHttpClient({
 //   host: "ipfs.infura.io",
@@ -99,9 +100,7 @@ export const NFTProvider = ({ children }) => {
   const fetchNFTS = async () => {
     setIsLoadingNFT(false);
     // const provider = new EtherScanProvider("goerli");
-    const provider = new ethers.providers.JsonRpcProvider(
-      `https://eth-goerli.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
-    );
+    const provider = new ethers.providers.JsonRpcProvider(`https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_API_KEY}`);
     const contract = fetchContract(provider);
     console.log(contract);
     const data = await contract.fetchMarketItems();
