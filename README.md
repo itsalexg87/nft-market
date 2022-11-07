@@ -2,7 +2,7 @@
 
 NFT App created with Next.js
 
-Site:
+Preview: https://nft-market-gray.vercel.app/
 
 # Main Technologies used
 
