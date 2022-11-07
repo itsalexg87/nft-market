@@ -104,7 +104,6 @@ export const NFTProvider = ({ children }) => {
       "https://eth-goerli.g.alchemy.com/v2/aR1r-mQBkEJHI3C3JfpTP7Odt9PS7xE1"
     );
     const contract = fetchContract(provider);
-    console.log(contract);
     const data = await contract.fetchMarketItems();
     const items = await Promise.all(
       data.map(async ({ tokenId, seller, owner, price: unformattedPrice }) => {
